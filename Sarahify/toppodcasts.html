@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+
+<head>
+    <link href="./style.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cabin&family=Fredoka:wght@300..700&family=Montserrat:ital,wght@0,200;1,200&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&family=PT+Sans:wght@700&family=Playfair+Display:wght@500&family=Poppins&family=Raleway:wght@500;700&family=Single+Day&family=Work+Sans&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <a href="./index.html"><button class="back-button"
+            style="font-size:25px;background-color:#1e2223;border-style:none;color:violet;"> <i
+                class="fa fa-chevron-left"></i></button></a>
+    <h1 class="header" style="color:white;"> <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+            fill="violet" class="bi bi-boombox" viewBox="0 0 16 16">
+            <path
+                d="M2.5 5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m2 0a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m7.5-.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0m1.5.5a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1m-7-1a.5.5 0 0 0 0 1h3a.5.5 0 0 0 0-1zm5.5 6.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+            <path
+                d="M11.5 13a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5m0-1a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3M5 10.5a.5.5 0 1 1-1 0 .5.5 0 0 1 1 0" />
+            <path d="M7 10.5a2.5 2.5 0 1 1-5 0 2.5 2.5 0 0 1 5 0m-1 0a1.5 1.5 0 1 0-3 0 1.5 1.5 0 0 0 3 0" />
+            <path
+                d="M14 0a.5.5 0 0 1 .5.5V2h.5a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h12.5V.5A.5.5 0 0 1 14 0M1 3v3h14V3zm14 4H1v7h14z" />
+        </svg> Sarah<span style="color:violet">ify</span>. </h1>
+    <h1 style="color:white;" class="header">Top Podcasts</h1>
+    <div id="songImagediv">
+        <img id="songImage" src="" alt="song-photo">
+    </div>
+    <div class="song-description">
+<h3 class="song-title" id="description" style="color:white;font-size:25px;"></h3>
+    </div>
+    <div class="audio-player">
+        <audio id="audioPlayer"></audio>
+        <button class="play-button" onclick="playAudiosP()"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                fill="violet" class="bi bi-skip-backward-fill" viewBox="0 0 16 16">
+                <path
+                    d="M.5 3.5A.5.5 0 0 0 0 4v8a.5.5 0 0 0 1 0V8.753l6.267 3.636c.54.313 1.233-.066 1.233-.697v-2.94l6.267 3.636c.54.314 1.233-.065 1.233-.696V4.308c0-.63-.693-1.01-1.233-.696L8.5 7.248v-2.94c0-.63-.692-1.01-1.233-.696L1 7.248V4a.5.5 0 0 0-.5-.5" />
+            </svg></button>
+            <button class="play-button" onclick="playAudios()"><svg xmlns="http://www.w3.org/2000/svg" width="36" height="36"
+                    fill="violet" class="bi bi-play-fill" viewBox="0 0 16 16">
+                    <path
+                        d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393" />
+                </svg></button>
+            
+            <button class="pause-button" onclick="pauseAudios()" style="background-color: #1e2223;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="violet" class="bi bi-pause-fill"
+                    viewBox="0 0 16 16">
+                    <path
+                        d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5m5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5" />
+                </svg>
+            </button>
+        <button class="play-button" onclick="playAudiosN()"><svg xmlns="http://www.w3.org/2000/svg" width="36"
+                height="36" fill="violet" class="bi bi-fast-forward-fill" viewBox="0 0 16 16">
+                <path
+                    d="M7.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C.713 12.69 0 12.345 0 11.692V4.308c0-.653.713-.998 1.233-.696z" />
+                <path
+                    d="M15.596 7.304a.802.802 0 0 1 0 1.392l-6.363 3.692C8.713 12.69 8 12.345 8 11.692V4.308c0-.653.713-.998 1.233-.696z" />
+            </svg></button>
+        
+    </div>
+    <script src="./toppodcast.js"></script>
+    <div class="footer2">
+        <h4 class="footer-text" style="color:white; ">Made by Sarah Roberts</h4>
+    </div>
+</body>
+
+</html>
